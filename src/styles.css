@@ -1,0 +1,12 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.container {
+    /* min-height: 100%; */
+    width: 100%;
+}
+.main-card{
+    margin: 5px;
+    min-height: 480px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

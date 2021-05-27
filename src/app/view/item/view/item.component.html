@@ -1,0 +1,43 @@
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="row" fxLayoutWrap fxLayoutGap="0.5%"
+fxLayoutAlign="center">
+
+<div fxFlex="100">
+    <mat-card class="main-card">
+      <mat-card-header>
+        <mat-card-title>Items</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+        <mat-card-content>
+          <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8" width="100%">
+            <ng-container matColumnDef="id" cdkColumnDef="id">
+              <mat-header-cell *matHeaderCellDef> Number </mat-header-cell>
+              <mat-cell *matCellDef="let element; let i = index;"><span class="mobile-label">Number</span></mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="description" >
+              <mat-header-cell *matHeaderCellDef> Penguin Product</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{element.description}}
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="priceList">
+              <mat-header-cell *matHeaderCellDef> Horseshoe</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{element.priceList}}
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"> </mat-row>
+          </table>
+
+<!--          <mat-paginator [pageSizeOptions]="[50, 100, 150, 200]" (page)="loadNextData();" showFirstLastButtons>-->
+<!--          </mat-paginator>-->
+        </mat-card-content>
+      </mat-card>
+
+  </div>
+</div>
+
+<mat-toolbar   style="border-top: 2px solid black;">
+  <span>pos System</span>
+</mat-toolbar>

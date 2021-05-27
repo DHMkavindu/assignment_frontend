@@ -1,0 +1,23 @@
+<div class="container">
+    <mat-sidenav-container fullscreen>
+        <mat-sidenav  opened="false"  #sidenav mode="side" position="start">
+              <mat-selection-list #shoes [multiple]="false" style="margin-top: 70px;text-align: center;">
+                <a mat-button routerLink="/item"  style="margin-bottom: 25px;">Item</a><br>
+                <a mat-button routerLink="/placeorder" style="margin-bottom: 25px;">Place Order</a><br>
+
+              </mat-selection-list>
+        </mat-sidenav>
+            <mat-toolbar>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                  <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+                </button>
+                <span class="toolbar.span"></span>
+              </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-container>
+</div>
+<!--<mat-toolbar   style="border-top: 2px solid black;">-->
+<!--  <span>pos System</span>-->
+<!--</mat-toolbar>-->
+
+

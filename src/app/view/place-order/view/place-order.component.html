@@ -1,0 +1,68 @@
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="row" fxLayoutWrap fxLayoutGap="0.5%"
+     fxLayoutAlign="center">
+
+  <div fxFlex="100">
+    <mat-card class="main-card">
+      <mat-card-header>
+        <mat-card-title>Place Order</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content style="margin-top: 20px;">
+        <form [formGroup]="placeOrderForm">
+          <div fxLayout="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="right">
+            <div fxFlex="50">
+              <div class="form-ctl">
+                <mat-form-field class="custForm" style="width: 100%;">
+                  <mat-label>Item Description</mat-label>
+                  <mat-select formControlName="description">
+                    <mat-option *ngFor="let item of item" [value]="item.item_description">
+                      {{item.item_description}}
+                    </mat-option>
+
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="right">
+            <div fxFlex="50">
+              <div class="form-ctl">
+                <mat-form-field class="custForm" style="width: 100%;">
+                  <mat-label>Item QTY</mat-label>
+                  <input matInput type="number" formControlName="qty">
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxFlex="50">
+              <mat-form-field class="custForm" style="width: 100%;">
+                <mat-label>Unit Or Carton</mat-label>
+                <mat-select formControlName="unitOrCarton">
+                  <mat-option value="u">Unit</mat-option>
+                  <mat-option value="c">Carton</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayout.sm="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="right">
+            <div fxFlex="50">
+              <div class="form-ctl">
+                <mat-form-field class="custForm" style="width: 100%;">
+                  <mat-label>Finale Price</mat-label>
+                  <input matInput formControlName="finalePrice">
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxFlex="50">
+              <button mat-raised-button color="primary" style="margin:5px" (click)="getFinalePrice()">Price Calculation</button>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<mat-toolbar style="border-top: 2px solid black;">
+  <span>pos System</span>
+</mat-toolbar>
+
+
